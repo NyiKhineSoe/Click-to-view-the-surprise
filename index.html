@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surprise Message</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box" id="surpriseBox">
+      <div class="message">💌 Click to open your surprise</div>
+
+      <div class="hidden-message">
+        🎉 Happy birthday, Ya Ping 💖 <br />
+        <img
+          src="assets/images/birthday_cake.jpeg"
+          alt="Birthday Cake"
+          class="cake"
+        />
+
+        <p
+          class="wish-text"
+          id="wishText"
+          data-text="Wishing you a day filled with love, laughter, and sweet memories 💕. "
+        ></p>
+
+        
+        <div class="music-player">
+          <audio
+            id="birthdaySong"
+            src="assets/music/happy-birthday-acoustic-spot-16196.mp3"
+          ></audio>
+          <button id="playPauseBtn" onclick="toggleMusic()">
+            🎵 Play Music
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

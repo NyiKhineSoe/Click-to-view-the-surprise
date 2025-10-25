@@ -1,0 +1,170 @@
+body {
+  background: linear-gradient(135deg, #f8e1e7, #fde2e4);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.box {
+  background-color: #fff;
+  width: 500px;              /* larger box */
+  min-height: 420px;         /* more vertical space */
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 20px;
+}
+
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.message {
+  font-size: 1.6rem;     /* bigger font */
+  color: #ff7b9c;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  padding: 20px;
+}
+
+.hidden-message {
+  display: none;                 /* hidden at first */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #e75480;
+  text-align: center;
+  padding: 10px 20px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.cake {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  margin-top: 20px;
+  opacity: 0;                    /* start hidden */
+  animation: fadeInCake 1.5s ease 0.5s forwards; /* delay 0.5s */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  object-fit: contain;
+}
+
+.wish-text {
+  font-size: 1.2rem;
+  color: #ff6b9c;
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0;                    /* start hidden */
+  animation: fadeInText 1.5s ease 2s forwards; /* delay 2s (after cake) */
+}
+
+.wish-text::after {
+  content: "|";               /* The cursor shape */
+  margin-left: 5px;
+  color: #ff6b9c;             /* Matches your romantic theme */
+  animation: blink 0.8s infinite;
+}
+
+
+
+.music-player {
+  margin-top: 25px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInMusic 1.5s ease 3.5s forwards; /* appears last */
+}
+
+#playPauseBtn {
+  background-color: #ff8fb1;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+#playPauseBtn:hover {
+  background-color: #ff6b9c;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInMusic {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInCake {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* 🌸 Responsive adjustments */
+@media (max-width: 600px) {
+  .box {
+    width: 90%;
+    min-height: 360px;
+    padding: 15px;
+  }
+
+  .message {
+    font-size: 1.2rem;
+  }
+
+  .hidden-message {
+    font-size: 1.4rem;
+  }
+
+  .cake {
+    width: 180px;
+  }
+
+  .wish-text {
+    font-size: 1rem;
+  }
+
+  #playPauseBtn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hidden-message {
+    font-size: 1.2rem;
+  }
+
+  .cake {
+    width: 150px;
+  }
+
+  .wish-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+
